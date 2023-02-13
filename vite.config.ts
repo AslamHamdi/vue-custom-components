@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/plugin.ts', //path.resolve(__dirname, '/src/plugin.ts'),
-      name: 'mindlens-components'
+      name: 'mindlensComponents'
     },
     rollupOptions: {
       external: ["vue"],

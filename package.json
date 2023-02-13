@@ -1,17 +1,22 @@
 {
   "name": "mindlens-components",
-  "version": "0.0.2",
+  "version": "0.0.9",
   "type": "module",
+  "main": "dist/mindlens-components.cjs",
+  "module": "dist/mindlens-components.js",
+  "exports": {
+    ".": "./dist/mindlens-components.js",
+    "./styles.css": "./dist/style.css"
+  },
+  "browser": {
+    "./styles.css": "./dist/style.css"
+  },
   "files": [
     "dist"
   ],
-  "main": "./dist/mindlens-components.umd.js",
-  "module": "./dist/mindlens-components.es.js",
-  "style": "./dist/style.css",
-  "types": "dist/main.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
