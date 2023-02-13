@@ -76,6 +76,7 @@
 <script lang="ts">
 
 export default {
+    name: 'ml-button',
     /*
      * Props list which determines style and content of the button
      * @props {string} variation - variation of the button 

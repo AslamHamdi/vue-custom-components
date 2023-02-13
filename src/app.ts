@@ -3,20 +3,19 @@ import { ref, onMounted, watch, inject } from 'vue'
 export default {
     // inject: ['MLAlert'],
     mounted(){
-        // this.MLAlert({
-        //     header: 'inject header'
-        // })
-        console.log("THIS? ", this)
+
         this.$MLAlert({
-            header: 'Inject header'
+            header: 'Inject header',
+            variation: 'content-only'
+        })
+
+        this.$MLAlert({
+            header: 'Inject header2',
+            variation: 'all'
         })
     },
     setup(){
-        // const globalVar = inject('MLAlert')
-        // //globalVar()
-        // console.log("GLOBAL VAR: ", globalVar)
-        // // globalVar()
-        // return globalVar
+    
     },
     methods: {
         testo() {

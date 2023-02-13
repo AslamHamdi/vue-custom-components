@@ -69,27 +69,27 @@
       </div>
 
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert/>
+        <ml-alert :visible="true"/>
       </div>
 
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert type="info"  header="Header"/>
-        <ml-alert type="error"  header="Header"/>
-        <ml-alert type="warning"  header="Header"/>
-        <ml-alert type="success"  header="Header"/>
+        <ml-alert type="info"  header="Header" :visible="true"/>
+        <ml-alert type="error"  header="Header" :visible="true"/>
+        <ml-alert type="warning"  header="Header" :visible="true"/>
+        <ml-alert type="success"  header="Header" :visible="true"/>
       </div>
 
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert type="info" header="This is default" variation="all"/>
+        <ml-alert type="info" header="This is default" variation="all" :visible="true"/>
       </div>
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert type="error" header="This is title only" variation="title-only"/>
+        <ml-alert type="error" header="This is title only" variation="title-only" :visible="true"/>
       </div>
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert type="warning" header="This is content only" variation="content-only" content="This is content only. Lorem ipsum dolor sit amet consectetur adipisicing elit"/>
+        <ml-alert type="warning" header="This is content only" variation="content-only" content="This is content only. Lorem ipsum dolor sit amet consectetur adipisicing elit" :visible="true"/>
       </div>
       <div class="flex justify-center items-center space-x-8 h-fit p-8">
-        <ml-alert type="success" header="This is title and content" variation="title-content"/>
+        <ml-alert type="success" header="This is title and content" variation="title-content" :visible="true"/>
       </div>
     </div>
   </div>
