@@ -1,7 +1,7 @@
 <template>
-    <transition name="fade">
-        <div :style="{position: position, right: right + 'px', top: offset + 'px'}">
-            <div v-if="visible" class="flex items-center justify-center border-2 rounded-sm" 
+    <transition name="ml__slideInRight" type="animation">
+        <div v-if="visible" class="ml__toast" :style="{position: position, right: right + 'px', top: offset + 'px'}">
+            <div class="flex items-center justify-center border-2 rounded-sm" 
             :class="[alertStyle().border, alertStyle().inner]"
             style="max-width: 450px; border-radius: 5px;">
                 <div class="m-4">
@@ -136,22 +136,62 @@ export default defineComponent({
 </script>
 
 <style>
-  .fade-enter-from {
-    opacity: 0;
-  }
-  .fade-enter-to {
-    opacity: 1;
-  }
-  .fade-enter-active {
-    transition: all 2s ease;
-  }
-  .fade-leave-from {
-    opacity: 1;
-  }
-  .fade-leave-to {
-    opacity: 0;
-  }
-  .fade-leave-active {
-    transition: all 2s ease;
-  }
-</style>
+.ml__slideInRight-enter-active {
+	 -webkit-animation: slideInRight 0.5s;
+	 animation: slideInRight 0.5s;
+}
+ .ml__slideInRight-leave-active {
+	 -webkit-animation: slideOutRight 0.5s;
+	 animation: slideOutRight 0.5s;
+}
+
+@-webkit-keyframes slideInRight {
+	 from {
+		 -webkit-transform: translate3d(110%, 0, 0);
+		 transform: translate3d(110%, 0, 0);
+		 visibility: visible;
+	}
+	 to {
+		 -webkit-transform: translate3d(0, 0, 0);
+		 transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes slideInRight {
+	 from {
+		 -webkit-transform: translate3d(110%, 0, 0);
+		 transform: translate3d(110%, 0, 0);
+		 visibility: visible;
+	}
+	 to {
+		 -webkit-transform: translate3d(0, 0, 0);
+		 transform: translate3d(0, 0, 0);
+	}
+}
+@-webkit-keyframes slideOutRight {
+	 from {
+		 -webkit-transform: translate3d(0, 0, 0);
+		 transform: translate3d(0, 0, 0);
+	}
+	 to {
+		 visibility: hidden;
+		 -webkit-transform: translate3d(110%, 0, 0);
+		 transform: translate3d(110%, 0, 0);
+	}
+}
+@keyframes slideOutRight {
+	 from {
+		 -webkit-transform: translate3d(0, 0, 0);
+		 transform: translate3d(0, 0, 0);
+	}
+	 to {
+		 visibility: hidden;
+		 -webkit-transform: translate3d(110%, 0, 0);
+		 transform: translate3d(110%, 0, 0);
+	}
+}
+
+.ml__toast {
+  transition: top .3s ease-out .5s, bottom .3s ease-out .5s;
+}
+ 
+ </style>
