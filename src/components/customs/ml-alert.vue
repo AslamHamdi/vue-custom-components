@@ -1,6 +1,6 @@
 <template>
     <transition name="ml__slideInRight" type="animation">
-        <div v-if="visible" class="ml__toast" :style="{position: position, right: right + 'px', top: offset + 'px'}">
+        <div v-if="visible" class="ml__alert" :style="{position: position, right: right + 'px', top: offset + 'px'}">
             <div class="flex items-center justify-center border-2 rounded-sm" 
             :class="[alertStyle().border, alertStyle().inner]"
             style="max-width: 450px; border-radius: 5px;">
@@ -190,7 +190,7 @@ export default defineComponent({
 	}
 }
 
-.ml__toast {
+.ml__alert {
   transition: top .3s ease-out .5s, bottom .3s ease-out .5s;
 }
  

@@ -9,29 +9,18 @@ export default {
             variation: 'content-only'
         })
 
-        this.$MLAlert({
-            header: 'Inject header2',
-            variation: 'all'
-        })
+        setTimeout(() => {
+            this.$MLAlert({
+                header: 'Inject header2',
+                variation: 'all'
+            })
+        }, 900)
+
     },
     setup(){
     
     },
     methods: {
-        testo() {
-            console.log("siniiii")
-        },
-        ml_ShowInfoAlert() {
 
-        },
-        ml_ShowErrorAlert() {
-
-        },
-        ml_ShowWarningAlert() {
-
-        },
-        ml_ShowSuccessAlert() {
-
-        }
     }
 }
