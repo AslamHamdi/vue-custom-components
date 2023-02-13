@@ -1,8 +1,14 @@
 {
-  "name": "mind-lens-coding-test",
-  "private": true,
-  "version": "0.0.0",
+  "name": "mindlens-components",
+  "version": "0.0.2",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/mindlens-components.umd.js",
+  "module": "./dist/mindlens-components.es.js",
+  "style": "./dist/style.css",
+  "types": "dist/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -14,8 +20,10 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.13",
+    "path": "^0.12.7",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.6",
     "typescript": "^4.9.3",

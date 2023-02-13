@@ -96,4 +96,4 @@
 
 </template>
 
-<script src="./app.ts"></script>
+<script src="./app.ts" lang="ts"></script>

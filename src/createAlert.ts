@@ -3,7 +3,6 @@ import MLAlert from './components/customs/ml-alert.vue'
 
 let config = {
     ALERT_GAP: 12,
-    TIMEOUT: 5000
 }
 
 let alerts: any = []

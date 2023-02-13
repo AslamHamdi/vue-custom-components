@@ -47,7 +47,9 @@ import mlButton from './ml-button.vue'
 export default defineComponent({
     name: 'MLAlert',
     mounted(){
-
+        setTimeout(() => {
+            this.handleClick()
+        }, 5000)
     },
     /*
      * Props list which determines style and content of the button
@@ -123,7 +125,8 @@ export default defineComponent({
             }else{
                 console.log("CLOSED")
             }
-        }
+        },
+
     },
     setup(props, ctx){
 

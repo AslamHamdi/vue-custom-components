@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './css/tailwind.css'
+//import './css/tailwind.css'
 import App from './App.vue'
 
 import MLAlert from './plugin'
