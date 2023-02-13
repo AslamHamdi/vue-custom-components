@@ -49,6 +49,10 @@
 import { defineComponent } from 'vue'  
 
 export default defineComponent({
+    name: 'MLAlert',
+    mounted(){
+        console.log("MOUNTEDD ALERT", this.header)
+    },
     /*
      * Props list which determines style and content of the button
      * @props {string} variation - variation of the alert
