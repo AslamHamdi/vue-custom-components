@@ -1,18 +1,89 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 custom components
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Custom component and plugins build for Vue 3
 
-## Recommended IDE Setup
+### What's included ?
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Button
+2. Alert
 
-## Type Support For `.vue` Imports in TS
+### How to install ?
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+1. Start a new project
+2. Run 'npm intall mindlens-components' or 'yarn add mindlens-components' in terminal at root dir
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### How to use the plugins and components ?
+1. Open main.ts
+2. Insert code below to register the plugins and components
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```
+import mindlens from 'mindlens-components'
+import 'mindlens-components/styles.css'
+
+import App from './App.vue'
+
+createApp(App)
+.use(mindlens)
+.mount('#app')
+```
+
+3. To use the button, use <ml-button/> component:
+
+```
+<ml-button variation="left-icon-text"/>
+<ml-button variation="text-only"/>
+
+<ml-button type="secondary" variation="right-icon-text"/>
+<ml-button type="secondary" variation="icon-only"/>
+```
+4. To use the alert, use MLAlert plugin. Need to inject the plugin into the component as below: 
+```
+export default {
+    inject: ['MLAlert'],
+    data() {
+      return {
+        mlAlert: this.MLAlert
+      }
+    },
+    methods: {
+      showAlert(type: string, variation: string){
+        this.mlAlert({
+            header: 'This is header',
+            type: type,
+            variation: variation,
+            content: 'This is a content. Content is a subject or ideas contained in something written, said...
+            textButton1: "Btn 1",
+            textButton2: "Btn 2"
+        })
+      },
+    }
+}
+```
+
+### props
+
+1. Button component:
+
+| Props         | Description                   | Value                                                 |
+| ------------- | ----------------------------- | ----------------------------------------------------- |
+| variation     | vVriation of the button       | left-icon-text, right-icon-text, text-only, icon-only |
+| type          | Button style type             | primary, secondary                                    |
+| type2         | Button criticality style type | info(default), warning, error, success                |
+| text          | Button text content           | String value                                          |
+
+
+2. Alert plugin
+
+| Props         | Description                   | Value                                                 |
+| ------------- | ----------------------------- | ----------------------------------------------------- |
+| variation     | Variation of the alert        | all, title-only, content-only, title-content          |
+| type          | Alert criticality style type  | info, error, warning, success                         |
+| header        | Alert header content          | String value                                          |
+| content       | Alert description content     | String value                                          |
+| textButton1   | Button 1 text content         | String value                                          |
+| textButton2   | Button 2 text content         | String value                                          |
+
+
+### Example
+
+For live example can go [here](https://vue-custom-components-test.vercel.app/)
