@@ -4,10 +4,10 @@ export default {
     inject: ['MLAlert'],
     mounted(){
 
-        this.MLAlert({
-            header: 'Inject header',
-            variation: 'content-only'
-        })
+        // this.MLAlert({
+        //     header: 'Inject header',
+        //     variation: 'content-only'
+        // })
 
         // setTimeout(() => {
         //     this.MLAlert({
