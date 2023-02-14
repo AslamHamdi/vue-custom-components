@@ -1,4 +1,5 @@
 import { createVNode, Component, render, VNode } from 'vue'
+import { AlertOptions } from './types'
 import MLAlert from './components/customs/ml-alert.vue'
 
 let config = {
@@ -18,10 +19,9 @@ export const createAlert = (options: any): { close: () => void }  => {
     }
 }
 
-export const setupVNode = (id: number, options: any) => {
+export const setupVNode = (id: number, options: AlertOptions) => {
     setTimeout(() => {
         const verticalOffset = moveAlertsOnAdd(options, alerts, config.ALERT_GAP)
-        console.log("Offset: ", verticalOffset)
 
         const container = document.createElement('div')
         document.body.appendChild(container)
@@ -71,9 +71,8 @@ export const moveAlertsOnClose = (
   
       if (!alertVNode.el) return
   
-      const verticalPos: string = 'top'
       const pos =
-        parseInt(alertVNode.el.style[verticalPos], 10) - alertHeight - config.ALERT_GAP
+        parseInt(alertVNode.el.style.top, 10) - alertHeight - config.ALERT_GAP
   
       if (!alertVNode.component) return
       alertVNode.component.props.offset = pos

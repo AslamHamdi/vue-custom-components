@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import MLAlert from './plugin'
-
+//import './style.css'
 let app = createApp(App)
 app.use(MLAlert)
 .mount('#app')

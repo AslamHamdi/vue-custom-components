@@ -1,6 +1,6 @@
 {
   "name": "mindlens-components",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "type": "module",
   "main": "dist/mindlens-components.cjs",
   "module": "dist/mindlens-components.js",
@@ -11,28 +11,36 @@
   "browser": {
     "./styles.css": "./dist/style.css"
   },
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
+    "test": "vitest --dom",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@types/lodash": "^4.14.191",
+    "happy-dom": "^8.3.2",
+    "jsdom": "^21.1.0",
     "lodash": "^4.17.21",
     "vue": "^3.2.45"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-c8": "^0.28.5",
+    "@vue/test-utils": "^2.0.0-rc.18",
     "autoprefixer": "^10.4.13",
     "path": "^0.12.7",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.6",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
+    "vitest": "^0.28.5",
     "vue-tsc": "^1.0.24"
   }
 }
