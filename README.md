@@ -59,3 +59,16 @@ export default {
     }
 }
 ```
+
+## props
+
+1. Button component:
+
+| Props         | Description                   | Value                                                 |
+| ------------- | ----------------------------- | ----------------------------------------------------- |
+| variation     | vVriation of the button       | left-icon-text, right-icon-text, text-only, icon-only |
+| type          | Button style type             | primary, secondary                                    |
+| type2         | Button criticality style type | info(default), warning, error, success                |
+| text          | Button text content           | String value                                          |
+
+
