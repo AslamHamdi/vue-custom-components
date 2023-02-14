@@ -83,3 +83,7 @@ export default {
 | textButton1   | Button 1 text content         | String value                                          |
 | textButton2   | Button 2 text content         | String value                                          |
 
+
+### Example
+
+For live example can go [here]: https://vue-custom-components-test.vercel.app/
