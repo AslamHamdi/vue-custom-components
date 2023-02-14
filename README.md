@@ -72,3 +72,14 @@ export default {
 | text          | Button text content           | String value                                          |
 
 
+2. Alert plugin
+
+| Props         | Description                   | Value                                                 |
+| ------------- | ----------------------------- | ----------------------------------------------------- |
+| variation     | Variation of the alert        | all, title-only, content-only, title-content          |
+| type          | Alert criticality style type  | info, error, warning, success                         |
+| header        | Alert header content          | String value                                          |
+| content       | Alert description content     | String value                                          |
+| textButton1   | Button 1 text content         | String value                                          |
+| textButton2   | Button 2 text content         | String value                                          |
+
