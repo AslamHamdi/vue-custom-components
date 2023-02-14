@@ -1,11 +1,7 @@
-import { mount } from "@vue/test-utils";
-import { afterEach, beforeEach, expect, test, vi, it } from "vitest";
+import { expect, test } from "vitest";
 import * as alertControl from '../../src/createAlert'
-import * as Vue from 'vue';
-
 
 describe("ML alert control", () => {
-
 
     test('moveAlertsOnAdd should move alert', () => {
         const alertObject = {
@@ -28,26 +24,34 @@ describe("ML alert control", () => {
             }
         }
         alertControl.moveAlertsOnClose(0, [{
-            toastVNode: {
+            alertVNode: {
                 el: {
                     style: {
                         'top': '100'
                     }
                 },
                 component: mockComponent
-            },
+            }
         }], 10)
         expect(mockComponent).toEqual({ props: { offset: 78 } })
     })
 
-    // describe('createToast', () => {
-    //     test('should work if the content is a VNode', () => {
-    //         vi.spyOn(alertControl, 'setupVNode');
-    //         alertControl.createAlert({ __v_isVNode: true });
-    //         expect(alertControl.setupVNode).toHaveBeenCalled()
-    //     })
-    // })
+    test('should return if no alertVNode el', () => {
+        const result = alertControl.moveAlertsOnClose(0, [{ alertVNode: {} }], 10)
+        expect(result).toBeUndefined();
+    })
 
-
+    test('should return if no alertVNode component', () => {
+        const result = alertControl.moveAlertsOnClose(0, [{
+            alertVNode: {
+                el: {
+                    style: {
+                        'top': '100'
+                    }
+                },
+            },
+        }], 10)
+        expect(result).toBeUndefined();
+    })
 })
 

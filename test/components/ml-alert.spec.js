@@ -1,10 +1,6 @@
 import { mount } from "@vue/test-utils";
-import { afterEach, beforeEach, expect, test, vi, it } from "vitest";
+import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import MlAlert from '../../src/components/customs/ml-alert.vue'
-
-const executeAfterTFiveSecond = (func) => {
-    setTimeout(() => { return false }, 5000) // 2 hours
-}
 
 const mock = vi.fn(() => console.log('executed'))
 
@@ -75,21 +71,4 @@ describe("ML alert component", () => {
     })
 
     //#endregion
-
-    // test("alert close after 5 seconds", async () => {
-    //     const wrapper = mount(MlAlert, {
-    //         props: {
-    //             visible: true,
-    //             variation: 'all',
-    //             type: 'success'
-    //         },
-    //     });
-
-    //     let data = executeAfterTFiveSecond()
-    //     console.log("DATA: ", data)
-    //vi.runAllTimers()
-    // expect(mock).toHaveBeenCalledTimes(1)
-    //console.log("VISIBLE: ", wrapper.findAll('div').at(0))
-    //expect(wrapper.props('visible')).toBeFalsy()
-    //})
 })

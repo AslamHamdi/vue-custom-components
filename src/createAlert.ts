@@ -67,15 +67,15 @@ export const moveAlertsOnClose = (
     alertHeight: number
   ) => {
     for (let i = index; i < alertArr.length; i++) {
-      const { alertVNode } = alertArr[i]
-  
-      if (!alertVNode.el) return
-  
-      const pos =
-        parseInt(alertVNode.el.style.top, 10) - alertHeight - config.ALERT_GAP
-  
-      if (!alertVNode.component) return
-      alertVNode.component.props.offset = pos
+        const { alertVNode } = alertArr[i] as any
+
+        if (!alertVNode.el) return
+    
+        const pos =
+            parseInt(alertVNode.el.style.top, 10) - alertHeight - config.ALERT_GAP
+    
+        if (!alertVNode.component) return
+        alertVNode.component.props.offset = pos
     }
 }
 

@@ -2,6 +2,9 @@ import { ref, onMounted, watch, inject } from 'vue'
 
 export default {
     inject: ['MLAlert'],
+    data() {
+ 
+    },
     mounted(){
 
         // this.MLAlert({
