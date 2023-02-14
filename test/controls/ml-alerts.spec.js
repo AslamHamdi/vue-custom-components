@@ -36,7 +36,7 @@ describe("ML alert control", () => {
                 },
                 component: mockComponent
             },
-        }], 'top-right', 10)
+        }], 10)
         expect(mockComponent).toEqual({ props: { offset: 78 } })
     })
 
