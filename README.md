@@ -2,17 +2,17 @@
 
 Custom component and plugins build for Vue 3
 
-## What's included ?
+### What's included ?
 
 1. Button
 2. Alert
 
-## How to install ?
+### How to install ?
 
 1. Start a new project
 2. Run 'npm intall mindlens-components' or 'yarn add mindlens-components' in terminal at root dir
 
-## How to use the plugins and components ?
+### How to use the plugins and components ?
 1. Open main.ts
 2. Insert code below to register the plugins and components
 
@@ -60,7 +60,7 @@ export default {
 }
 ```
 
-## props
+### props
 
 1. Button component:
 
