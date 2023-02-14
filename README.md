@@ -86,4 +86,4 @@ export default {
 
 ### Example
 
-For live example can go [here]: https://vue-custom-components-test.vercel.app/
+For live example can go [here](https://vue-custom-components-test.vercel.app/)
